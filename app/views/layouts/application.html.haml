@@ -1,0 +1,14 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title
+      = yield(:title) || 'ApQuickTest'
+    = render 'layouts/head'
+  %body
+    .wrapper
+      .container
+        .row
+          .col-xs-12.zero
+            = yield
+      .push
