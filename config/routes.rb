@@ -4,18 +4,16 @@ Rails.application.routes.draw do
 
   devise_scope :user do
     authenticated :user do
-      root 'billboard#index', as: :authenticated_root
+      root 'billboards#index', as: :authenticated_root
     end
 
     unauthenticated do
-      root 'devise/sessions#new', as: :unauthenticated_root
+      root 'devise/registrations#new', as: :unauthenticated_root
     end
   end
 
 
   resources :billboards
   resources :billboard_votes
-
-  root 'devise/sessions#new'
 
 end

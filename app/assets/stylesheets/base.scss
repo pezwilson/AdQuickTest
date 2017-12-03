@@ -1,7 +1,10 @@
 @import "base-variables";
 
 //body > .container {padding: 60px 15px 0;}
-body { padding-top: 70px; }
+body {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
 
 .page-header {
   a.btn {
