@@ -9,30 +9,6 @@
 .col-xs-12
   = render 'layouts/messages'
 
--# Old skewl
--#- @billboards.each do |b|
--#  .row
--#    .col-xs-12.big-top-margin
--#      .col-sm-2.padding-top
--#        .semi-bold
--#          = b.name
--#      .col-sm-4
--#        = image_tag b.image, class: "img img-responsive"
--#      .col-sm-2.padding-top
--#        .semi-bold
--#          = 'Overall score: ' + b.score.to_s
--#      .col-sm-1.hidden-xs.padding-top
--#        = button_to 'Upvote', billboard_votes_path, method: :post, params: {billboard_id: b.id, direction: 'up'}, class: "btn btn-default vote-button"
--#        = button_to 'Downvote', billboard_votes_path, method: :post, params: {billboard_id: b.id, direction: 'down'}, class: "btn btn-default vote-button downvote"
--#
--#      .col-xs-12.hidden-sm.hidden-md.hidden-lg.padding-top
--#        .left
--#          = button_to 'Upvote', billboard_votes_path, method: :post, params: {billboard_id: b.id, direction: 'up'}, class: "btn btn-default vote-button"
--#        .left
--#          = button_to 'Downvote', billboard_votes_path, method: :post, params: {billboard_id: b.id, direction: 'down'}, class: "btn btn-default vote-buttons small-left-margin"
--#        .clear
-
--# With HN weighted algorithm
 .col-xs-12
   * Billboard ranking is determined by voting and time since added to the contest
 
