@@ -1,7 +1,15 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+require 'net/http'
+require 'uri'
+require 'csv'
+
+def open(url)
+  Net::HTTP.get(URI.parse(url))
+end
+
+url = 'https://d26dzxoao6i3hh.cloudfront.net/items/3q0W442w1B1I1h1M142j/billboard%20voting%20seed.csv'
+content = Net::HTTP.get(URI.parse(url))
+
+csv = CSV.parse(content, :headers => true)
+csv.each do |row|
+  Billboard.create!(name: row[0], image: row[1])
+end

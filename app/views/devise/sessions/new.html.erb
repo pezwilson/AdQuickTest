@@ -1,0 +1,23 @@
+<% title "Sign in to AdQuickTest" %>
+<div class="col-sm-12">
+  <div class="col-sm-10 col-md-8 col-lg-7 col-sm-offset-1 col-md-offset-3">
+    <div class="page-header-session"><h2><%= yield(:title)%></h2></div>
+  </div>
+</div>
+
+<div class="col-sm-12">
+  <div class="col-sm-5 col-md-4 col-sm-offset-1 col-md-offset-3">
+    <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), :html => {:class => 'form-vertical' }) do |f| %>
+      <%= f.error_notification %>
+      <%= f.input :email, required: false, autofocus: true %>
+      <%= f.input :password, required: false %>
+      <div class="radio remove-padding">
+        <%= f.input :remember_me, as: :boolean, :label => false, :inline_label => true if devise_mapping.rememberable? %>
+      </div>
+
+      <%= f.button :submit, "Log In" %>
+    <% end %>
+    <br />
+    <%= render "devise/shared/links" %>
+  </div>
+</div>

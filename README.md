@@ -1,24 +1,13 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+AdQuickTest is a Rails 5.1.2 application running on Ruby 2.4.2. It requires Postgres in order to run locally.
 
-Things you may want to cover:
+To use the application please unzip it, cd into its directory, then run:
+ 
+<code>rails db:create</code>
+<code>rails db:migrate</code>
+<code>rails db:seed</code>
+<code>rails s</code>
 
-* Ruby version
+Everything should be pretty straightforward and self-apparent after that!
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
